@@ -1,0 +1,11 @@
+.ipynb_checkpoints*
+__pycache__
+*cache
+temp*
+
+.DS_Store
+.vscode
+#Ignore temps directory
+temp/
+local/img_back
+local/data/img
