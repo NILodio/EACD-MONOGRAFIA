@@ -8,4 +8,4 @@ temp*
 #Ignore temps directory
 temp/
 local/img_back
-local/data/imgs
+local/data
