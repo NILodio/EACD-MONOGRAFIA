@@ -77,6 +77,22 @@ def create_and_read_metadata(images_path , medata_path, split_value , labels_dic
     return metadata
 
 def read_content(xml_file: str):
+    """
+    Returns important information from a xml with a Bbox
+
+    Args:
+        xml_file (str): path of the xml you want to read.
+    Returns:
+        file_path (str): path of the image that corresponds to this xml.
+
+        file_name (str): name of the image that corresponds to this xml.
+
+        list_with_all_boxes (list): list whith 4 points of the Bbox. shape[N,4]
+
+        list_with_all_names (list): list with labels of each Bbox. shape[N,1]
+        
+        list_with_image_dimentions: list with the shape of the image shape[1,1]
+    """
     
     
     tree = ET.parse(xml_file)
@@ -111,3 +127,4 @@ def read_content(xml_file: str):
         
 
     return file_path,file_name, list_with_all_boxes,list_with_all_names,list_with_image_dimentions
+
