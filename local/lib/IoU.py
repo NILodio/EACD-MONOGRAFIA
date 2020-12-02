@@ -5,8 +5,10 @@ def bb_intersection_over_union(box1: np.ndarray, box2: np.ndarray):
     """
 
     calculate intersection over union cover percent
+
     :param box1: box1 with shape (N,4) or (N,2,2) or (2,2) or (4,). first shape is preferred
     :param box2: box2 with shape (N,4) or (N,2,2) or (2,2) or (4,). first shape is preferred
+    
     :return: IoU ratio if intersect, else 0
 
     """
