@@ -26,7 +26,7 @@ def display_random_image (images, label, show_box = True ,image_path = 'local/da
         ymin = images.iloc[index][3] * len_y
         ymax = images.iloc[index][4] * len_y
 
-        plt.figure(figsize=(15,8))
+        plt.figure(figsize=(10,5))
         plt.imshow(img)
         plt.title('Image #{} : Formato : {} '.format(index,images.iloc[index][6]))
         plt.plot((xmin,xmax),(ymin,ymin),"r")
@@ -37,7 +37,7 @@ def display_random_image (images, label, show_box = True ,image_path = 'local/da
 
         
     else:
-        plt.figure(figsize=(15,8))
+        plt.figure(figsize=(10,5))
         plt.imshow(img)
         plt.grid(False)
         plt.title('Image #{} : Formato : {} '.format(index,images.iloc[index][6]))
@@ -100,7 +100,7 @@ def display_random_image_Pre (Images,Images_Pre, show_box = True,image_path = 'l
 
 #function to show a batch of three images
 
-def imshow_batch_of_three(batch, show_box=True):
+def imshow_batch_of_three(batch, show_box=True, num_images = 2):
     
     """
     Returns plot of 3 images with bbox.
@@ -118,10 +118,10 @@ def imshow_batch_of_three(batch, show_box=True):
 
     boxes_batch = batch[1].numpy()
     image_batch = batch[0].numpy()
-    _ , axarr = plt.subplots(1, 3, figsize=(15, 5), sharey=True)
+    _ , axarr = plt.subplots(1, num_images, figsize=(15, 5), sharey=True)
     _,len_y,len_x,_=image_batch.shape
 
-    for i in range(3):
+    for i in range(num_images):
         img = image_batch[i, ...]
         axarr[i].imshow(img)
         if show_box:
